@@ -4,6 +4,7 @@
 .index {
   @include flex(center);
 
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
 
@@ -93,6 +94,27 @@
       }
       .triangle {
         transform: translate(-50%, -60%) rotate(360deg);
+      }
+    }
+
+    &.step2 {
+      .rect {
+        transition: all 10s;
+        transform: translate(-50%, -50%) rotate(-360deg) scale(100);
+      }
+    }
+
+    &.step3 {
+      .circle {
+        transition: all 10s;
+        transform: scale(100);
+      }
+    }
+
+    &.step4 {
+      .triangle {
+        transition: all 10s;
+        transform: translate(-50%, -60%) rotate(360deg) scale(100);
       }
     }
   }

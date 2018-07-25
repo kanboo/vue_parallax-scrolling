@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'index',
+  name: 'question',
   components: {},
   data() {
     return {

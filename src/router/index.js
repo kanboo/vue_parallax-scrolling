@@ -8,7 +8,17 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: () => import('@/components/Index')
+      component: () => import('@/page/Index')
+    },
+    {
+      path: '/question',
+      name: 'Question',
+      component: () => import('@/page/Question')
+    },
+    {
+      path: '*',
+      name: 'Index',
+      component: () => import('@/page/Index')
     }
   ]
 })

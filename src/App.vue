@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <transition name="fade" mode="out-in" appear>
+      <router-view/>
+    </transition>
     <the-footer></the-footer>
   </div>
 </template>
