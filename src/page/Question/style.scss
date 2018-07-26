@@ -1,6 +1,190 @@
 @import "@/sass/public/_variable.scss";
 @import "@/sass/public/_mixin.scss";
 
-.question{
+.question {
+  @include flex(center, flex-start);
 
+  width: 100vw;
+  height: 100vh;
+
+  .container {
+    @include flex(flex-start);
+
+    overflow: hidden;
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+  }
+
+  .question_block {
+    // @include outline(red);
+    @include flex(flex-start);
+
+    flex-direction: column;
+    width: 602px;
+    height: 100%;
+    padding-top: 86px;
+    padding-right: 90px;
+    padding-left: 122px;
+
+    .title {
+      text-align: center;
+      color: #ff3c82;
+      font-family: Roboto;
+      font-size: 64px;
+      font-weight: bold;
+    }
+    .subtitle {
+      margin-top: 10px;
+      color: #ffffff;
+      font-family: Roboto;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 48px;
+    }
+    .subtitle2 {
+      margin-top: 16px;
+      color: #0027c8;
+      font-family: Roboto;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    .btns {
+      @include flex(center);
+
+      flex-direction: column;
+      margin-top: 40px;
+
+      button {
+        width: 380px;
+        height: 56px;
+        // padding: 10px 53px;
+        text-align: center;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        border-radius: 30.5px;
+        background-color: transparent;
+        font-family: Roboto;
+        font-size: 20px;
+        line-height: 36px;
+
+        &:hover {
+          color: $color-blue-dark;
+          background-color: #ffffff;
+        }
+
+        + button {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+
+  .graphics_block {
+    position: relative;
+    overflow: hidden;
+    width: 422px;
+    height: 100%;
+    transition: all 4s;
+    transform: translateX(600%);
+    background: #0027c8;
+
+    .rect {
+      @include size(179px);
+
+      position: absolute;
+      z-index: 1;
+      top: 180px;
+      left: 69px;
+      transition: all 4s;
+      transform: translateY(600%);
+      background-color: $color-pink;
+    }
+
+    .triangle {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      right: -14px;
+      transition: all 4s;
+      // transform: translateY(-50%);
+      transform: translateY(600%);
+      border-right: 64px solid transparent;
+      border-bottom: 147px solid $color-white;
+      border-left: 64px solid transparent;
+    }
+
+    .circle {
+      @include size(400px);
+
+      position: absolute;
+      right: -62px;
+      bottom: -138px;
+      transition: all 1.5s;
+      transform: translateY(600%);
+      border-radius: 50%;
+      background-color: $color-black;
+    }
+
+    &.step1 {
+      transform: translateX(0%);
+    }
+
+    &.step2 {
+      .rect {
+        transform: translateY(0%);
+      }
+      .triangle {
+        transform: translateY(-50%);
+      }
+      .circle {
+        transform: translateY(0%);
+      }
+    }
+
+    &.step3 {
+      .rect {
+        // transform: translateY(0%);
+        // animation: rectRotate 4s infinite alternate;
+        animation: rectRotate 1s 4s ease-out 1, rectRotate 4s 4s linear infinite;
+      }
+      .triangle {
+        // transform: translateY(-50%);
+        // animation: triangleRotate 4s infinite alternate;
+        animation: triangleRotate 1s 4s ease-out 1,
+        triangleRotate 4s 4s linear infinite;
+      }
+      .circle {
+        animation: circleTranslate 4s 4s infinite alternate;
+      }
+    }
+  }
+}
+
+@keyframes rectRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes triangleRotate {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(-360deg);
+  }
+}
+
+@keyframes circleTranslate {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(-5%, -10%);
+  }
 }

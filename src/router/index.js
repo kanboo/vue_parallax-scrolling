@@ -16,6 +16,11 @@ export default new Router({
       component: () => import('@/page/Question')
     },
     {
+      path: '/caculating',
+      name: 'Caculating',
+      component: () => import('@/page/Caculating')
+    },
+    {
       path: '*',
       name: 'Index',
       component: () => import('@/page/Index')
