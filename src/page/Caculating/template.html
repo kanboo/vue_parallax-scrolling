@@ -1,3 +1,20 @@
 <div class="caculating">
-  Caculating
+  <div class="container">
+
+    <div class="text">
+      <h1 class="title">
+        ALL DONE!
+      </h1>
+      <p class="subtitle2">
+        Keep scrolling to show the result
+      </p>
+      <button id="restart"
+              @click="goHome">TRY AGAIN</button>
+    </div>
+  </div>
+  <div class="triangle"
+       v-for="item in 20"
+       :class="'triangle_'+ item"></div>
+  <div class="triangle triangle_big"></div>
+  <div class="done">bottom</div>
 </div>

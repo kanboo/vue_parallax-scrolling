@@ -23,9 +23,14 @@ export default {
       this.$set(this.animationClass, 'step3', true)
     }, 4000)
 
-    setTimeout(() => {
-      this.$router.push({ path: 'Caculating' })
-    }, 10000)
+    // setTimeout(() => {
+    //   this.$router.push({ path: 'Caculating' })
+    // }, 10000)
+  },
+  methods: {
+    goNext() {
+      this.$router.push({ path: '/Caculating' })
+    }
   }
 }
 </script>

@@ -38,6 +38,8 @@ module.exports = {
   // true 允許變量被重寫, false 不允許被重寫
   globals: {
     _: true,
-    vuex: true
+    vuex: true,
+    TimelineMax: true,
+    TweenMax: true
   }
 }
